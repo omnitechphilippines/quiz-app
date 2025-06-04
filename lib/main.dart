@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'quiz.dart';
+import 'router.dart';
 
-void main() => runApp(const QuizApp());
+void main() => runApp(const ProviderScope(child: QuizApp()));
 
 class QuizApp extends StatelessWidget {
   const QuizApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: Quiz(), title: 'Quiz');
+    return MaterialApp.router(title: 'Quiz', debugShowCheckedModeBanner: false, routerConfig: router);
   }
 }
